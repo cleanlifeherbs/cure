@@ -227,17 +227,21 @@
         .service-icon {
             margin-right: 15px;
             font-size: 24px;
+        }
+        
+        .service-box:nth-child(1) .service-icon {
             color: #8bc34a;
         }
         
         .service-box:nth-child(2) .service-icon,
         .service-box:nth-child(3) .service-icon {
-            color: white;
+            color: #8bc34a;
         }
         
         .service-content h3 {
             font-size: 18px;
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
         .service-content p {
@@ -377,27 +381,49 @@
             padding: 80px 0;
             background: #f9f9f9;
             text-align: center;
+            position: relative;
+        }
+        
+        .products-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            font-size: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            z-index: 0;
         }
         
         .products-header {
+            position: relative;
+            z-index: 1;
             margin-bottom: 40px;
         }
         
-        .products-header p {
+        .products-header .online-text {
             color: #8bc34a;
             font-weight: 600;
             margin-bottom: 10px;
+            font-size: 18px;
         }
         
         .products-header h2 {
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 15px;
+            color: #333;
         }
         
         .products-header .sub-text {
             color: #666;
             max-width: 700px;
             margin: 0 auto;
+            font-size: 16px;
         }
         
         .product-grid {
@@ -405,6 +431,8 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 40px;
+            position: relative;
+            z-index: 1;
         }
         
         .product-card {
@@ -413,10 +441,12 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
         
         .product-img {
-            height: 200px;
+            height: 250px;
             overflow: hidden;
         }
         
@@ -428,17 +458,22 @@
         
         .product-info {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         
         .product-rating {
             color: #ffc107;
             margin-bottom: 10px;
+            font-size: 16px;
         }
         
         .product-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 15px;
             color: #333;
+            font-weight: bold;
         }
         
         .product-info p {
@@ -446,10 +481,109 @@
             margin-bottom: 15px;
             font-size: 14px;
             line-height: 1.6;
+            flex-grow: 1;
         }
         
         .view-more {
-            margin-top: 40px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .view-more-btn {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .view-more-btn:hover {
+            background: #7ab33d;
+        }
+        
+        .view-more-btn i {
+            margin-left: 8px;
+        }
+        
+        /* No Regrets Section */
+        .no-regrets {
+            padding: 80px 0;
+            background: #fff;
+            position: relative;
+        }
+        
+        .no-regrets-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .no-regrets-gallery {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-right: 40px;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        
+        .gallery-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .no-regrets-content {
+            flex: 1;
+            padding-top: 20px;
+        }
+        
+        .no-regrets-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            margin-bottom: 10px;
+        }
+        
+        .no-regrets-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .no-regrets-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .no-regrets-btn {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .no-regrets-btn:hover {
+            background: #7ab33d;
         }
         
         /* Contact Section */
@@ -496,6 +630,9 @@
             background: #333;
             color: white;
             border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
         }
         
         .contact-btn:hover {
@@ -503,144 +640,252 @@
             color: white;
         }
         
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            padding: 60px 0 20px;
+        .contact-btn i {
+            margin-left: 8px;
         }
         
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+        /* Footer */
+        .main-footer {
+            text-align: center;
+            padding: 40px 0 0;
+        }
+        
+        .order-btn-large {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
             margin-bottom: 40px;
         }
         
-        .footer-col h3 {
+        .order-btn-large:hover {
+            background: #7ab33d;
+        }
+        
+        .order-btn-large i {
+            margin-left: 10px;
+        }
+        
+        .footer-dark {
+            background-color: #1e2a2f;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-payment {
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-badges {
+            display: flex;
+            gap: 15px;
+            margin-right: 30px;
+        }
+        
+        .footer-badge {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .payment-text {
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .payment-platforms {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .payment-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
         }
         
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: #8bc34a;
+        .footer-social {
+            text-align: right;
         }
         
-        .footer-col p {
+        .social-text {
             margin-bottom: 15px;
-            line-height: 1.6;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column:first-child {
+            margin-right: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #8bc34a;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
             color: #ccc;
         }
         
-        .footer-links li {
-            margin-bottom: 10px;
+        .contact-item i {
+            color: #8bc34a;
+            margin-right: 10px;
+            font-size: 18px;
+            width: 20px;
         }
         
-        .footer-links a {
+        .contact-item a {
             color: #ccc;
             transition: color 0.3s;
         }
         
-        .footer-links a:hover {
+        .contact-item a:hover {
             color: #8bc34a;
         }
         
-        .footer-contact li {
-            display: flex;
-            margin-bottom: 15px;
-            color: #ccc;
-        }
-        
-        .footer-contact i {
-            margin-right: 10px;
-            color: #8bc34a;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: #8bc34a;
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
+        .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: #ccc;
             font-size: 14px;
         }
         
-        /* WhatsApp Button */
-        .whatsapp-btn {
+        .footer-bottom a {
+            color: #8bc34a;
+        }
+        
+        .chat-widget {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .chat-bubble {
             width: 60px;
             height: 60px;
-            background: #25d366;
-            color: white;
+            background-color: #8bc34a;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            color: white;
+            font-size: 24px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Navigation dots */
-        .nav-dots {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: all 0.3s;
         }
         
-        .nav-dot.active {
-            background: #8bc34a;
-            transform: scale(1.3);
+        .chat-bubble:hover {
+            transform: scale(1.1);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 90px;
+            width: 40px;
+            height: 40px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
         }
         
         /* Responsive Styles */
@@ -682,6 +927,19 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
+            .no-regrets-container {
+                flex-direction: column;
+            }
+            
+            .no-regrets-gallery {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 30px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
             .contact-content {
                 flex-direction: column;
                 text-align: center;
@@ -693,6 +951,32 @@
             
             .contact-phone {
                 margin: 0 0 20px;
+            }
+            
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-payment {
+                margin-bottom: 30px;
+            }
+            
+            .footer-social {
+                text-align: left;
+            }
+            
+            .social-icons {
+                justify-content: flex-start;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-bottom p {
+                margin-bottom: 10px;
             }
         }
         
@@ -721,8 +1005,12 @@
                 grid-template-columns: 1fr;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .no-regrets-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-column {
+                flex: 0 0 100%;
             }
         }
     </style>
@@ -778,7 +1066,7 @@
         <div class="services">
             <div class="service-box">
                 <div class="service-icon">
-                    <i class="fas fa-truck"></i>
+                    <img src="/placeholder.svg?height=40&width=40" alt="Delivery truck icon" style="width: 40px; height: 40px;">
                 </div>
                 <div class="service-content">
                     <h3>Swift delivery services</h3>
@@ -786,15 +1074,15 @@
             </div>
             <div class="service-box">
                 <div class="service-icon">
-                    <i class="fas fa-headset"></i>
+                    <img src="/placeholder.svg?height=40&width=40" alt="Customer support icon" style="width: 40px; height: 40px;">
                 </div>
                 <div class="service-content">
-                    <h3>Professional customer support</h3>
+                    <h3>Proffesional customer support</h3>
                 </div>
             </div>
             <div class="service-box">
                 <div class="service-icon">
-                    <i class="fas fa-coffee"></i>
+                    <img src="/placeholder.svg?height=40&width=40" alt="Herbs icon" style="width: 40px; height: 40px;">
                 </div>
                 <div class="service-content">
                     <h3>Herbs & Supplement</h3>
@@ -865,9 +1153,10 @@
 
     <!-- Products Section -->
     <section class="products">
+        <div class="products-bg">POPULAR</div>
         <div class="container">
             <div class="products-header">
-                <p>We are Online</p>
+                <p class="online-text">We are Online</p>
                 <h2>Popular products</h2>
                 <p class="sub-text">These herbal products are highly demanded over the globe</p>
             </div>
@@ -875,7 +1164,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Herbal cure for Tinctures">
+                        <img src="/placeholder.svg?height=250&width=400" alt="Herbal cure for Tinctures">
                     </div>
                     <div class="product-info">
                         <div class="product-rating">
@@ -886,13 +1175,13 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <h3>Herbal cure for Tinctures</h3>
-                        <p>To draw out the active compounds of a plant, a plant's active compounds are extracted as a result. These herbal tinctures to detoxify and improve your organs, cells and overall health.</p>
+                        <p>To every illness there's a "root cause"an organ/ a cell is affected as a result. Place your order for herbal tinctures to detoxify and improve your organs, cells and overall health.</p>
                     </div>
                 </div>
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Herbal medication to stop blood inflammation">
+                        <img src="/placeholder.svg?height=250&width=400" alt="Herbal medication to stop blood inflammation">
                     </div>
                     <div class="product-info">
                         <div class="product-rating">
@@ -900,16 +1189,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
                         </div>
                         <h3>Herbal medication to stop blood inflammation</h3>
-                        <p>Detox your body generally of fatigue and high level sugar in the blood and create a balance in the kidneys and liver.</p>
+                        <p>Detox your body generally of fatigue and high level sugar,iron,maintain ferritin level and cleanse the kidneys and liver.</p>
                     </div>
                 </div>
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Herbal cure for Weight Loss, Colon Cleanse and Wormmur">
+                        <img src="/placeholder.svg?height=250&width=400" alt="Herbal cure for Weight Loss, Colon Cleanse and Wormour">
                     </div>
                     <div class="product-info">
                         <div class="product-rating">
@@ -919,14 +1208,73 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h3>Herbal cure for Weight Loss, Colon Cleanse and Wormmur</h3>
-                        <p>Fast result and Permanent cure No side effect, tested and Trusted best solution center.</p>
+                        <h3>Herbal cure for Weight Loss, Colon Cleanse and Wormour</h3>
+                        <p>Fast result and Permanent cure No side effect, tested and Trusted Best solution center.</p>
                     </div>
                 </div>
             </div>
             
             <div class="view-more">
-                <a href="#" class="btn">View more <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="view-more-btn">View more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Regrets Section -->
+    <section class="no-regrets">
+        <div class="no-regrets-container">
+            <div class="no-regrets-gallery">
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=100&width=150" alt="Herbal products">
+                    <img src="/placeholder.svg?height=100&width=150" alt="Herbal products" style="margin-top: 10px;">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+                <div class="gallery-img">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Herbal products">
+                </div>
+            </div>
+            
+            <div class="no-regrets-content">
+                <div class="no-regrets-logo"></div>
+                <h2 class="no-regrets-title">No Regrets With Clean Life</h2>
+                <p class="no-regrets-text">I'm not looking for personal benefits from our work as my aim is to help you get rid of your health problems. I have been able to help thousands of people all over the world with my herbal remedies. I'm a professional herbalist with over 30 years of experience in the field of herbal medicine. I have dedicated my life to researching and developing herbal remedies that work.</p>
+                
+                <p class="no-regrets-text">At the Clean Life Herbal Home, Our aim is to make life better with a solution to every health challenge. We are here to help you with a solution to your health problems. Our herbal products are made from 100% natural ingredients with no side effects.</p>
+                
+                <p class="no-regrets-text">Looking for simple, natural or herbal cures for common ailments with no side effects? Our herbal remedies are your best option. We have herbal cures for various health conditions and diseases. Though herbal treatments and herbal remedies are sometimes slow to work, unlike the fast-acting drugs that are often prescribed, they are generally safer and more effective in the long run.</p>
+                
+                <p class="no-regrets-text">Our herbal products are made from 100% natural ingredients with no side effects. We have herbal cures for various health conditions and diseases. Though herbal treatments and herbal remedies are sometimes slow to work, unlike the fast-acting drugs that are often prescribed, they are generally safer and more effective in the long run.</p>
+                
+                <a href="#" class="no-regrets-btn">Place an order now with Clean Life Herbal Remedy</a>
             </div>
         </div>
     </section>
@@ -947,9 +1295,104 @@
         </div>
     </section>
 
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <a href="#" class="order-btn-large">Place An Order Now At Clean Life Herbal Remedy <i class="fas fa-arrow-right"></i></a>
+        
+        <div class="footer-dark">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-payment">
+                        <div class="footer-badges">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Herbal Product Badge" class="footer-badge">
+                            <img src="/placeholder.svg?height=60&width=60" alt="100% Natural Badge" class="footer-badge">
+                        </div>
+                        <div>
+                            <p class="payment-text">Payment</p>
+                            <p class="payment-text">These Are Our Payment Platforms</p>
+                            <div class="payment-platforms">
+                                <div class="payment-icon">
+                                    <span>Z</span>
+                                </div>
+                                <div class="payment-icon">
+                                    <span>V</span>
+                                </div>
+                                <div class="payment-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="payment-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <p class="social-text">Follow Clean Life Social Media —</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3>About Clean Life</h3>
+                        <p>Clean Life Herbal Cure:</p>
+                        <p>I am Clean Life by name. I'm a herbal medicinal from Africa , I have been in this herbal work for years now and I have cured a lot of persons from various diseases, my grandmother was once a healer (traditional medicinal) at a little age I started assisting her with the work and then she passed away and left the work with me, God gave me this gift to heal his people and it has being my main aim to heal God's people and do his work to please only him who put me to earth for this purpose. My traditional home made herbal medicine will help eradicate your virus within 14 days, you won't be able to trace any symptoms and once you go for check up behold your results will be confirmed negative. You just need to have faith and the believe in my medicine as faith conquers it all. I am a very simple and generous kind man with a good heart, A father as well. I am gifted with the amazing gift of using Herbs and roots to Cure different type of illness. This is no magic. You just have to believe that there are root and herbs that are very active for the body. I CURE, BUT GOD HEALS. There are lots of herbal plants and roots added together with a little seamoss to make the herbal cure. The reason for the little seamoss, is to enable colon cleanse and to work effectively with no other side effects Meanwhile, herbal plants like Aloe vera, Cinnamon, Bitter melon, Milk thistle, Fenugreek, Gymnena, Ginger. Are very useful. These herbs are natural and are made from real roots and plants that does not have any side effects at all.</p>
+                        <p>I would Say that Herbal medicine is a part and parcel of and sometimes synonymous with traditional medicine. It is the oldest and still the most widely used system of medicine in the world today. It is used in all societies and is common to all cultures.</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact With Clean Life Below Information:</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>Private Email: <a href="mailto:cleanlifeherbalcure@gmail.com">cleanlifeherbalcure@gmail.com</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <p><a href="tel:+14247381393">+1 (424) 738 1393</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Clean Life Herbal Cure</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Location: 729 Bayberry ct Nashville, North Carolina (NC) 27856</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>2025 © All Rights Reserved - <a href="#">Clean Life Online</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- WhatsApp Button -->
     <a href="https://wa.me/14247381393" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-bubble">
+            <i class="far fa-comment-dots"></i>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
     </a>
 
     <script>
@@ -958,17 +1401,21 @@
             // Add scroll effect to header
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('header');
+                const backToTop = document.querySelector('.back-to-top');
+                
                 if (window.scrollY > 100) {
                     header.style.background = 'rgba(255, 255, 255, 0.9)';
                     document.querySelectorAll('.nav-links a').forEach(link => {
                         link.style.color = '#333';
                     });
+                    backToTop.classList.add('visible');
                 } else {
                     header.style.background = 'transparent';
                     document.querySelectorAll('.nav-links a').forEach(link => {
                         link.style.color = 'white';
                     });
                     document.querySelector('.nav-links li:first-child a').style.color = '#8bc34a';
+                    backToTop.classList.remove('visible');
                 }
             });
             
@@ -979,6 +1426,16 @@
                     navDots.forEach(d => d.classList.remove('active'));
                     this.classList.add('active');
                     // Here you would add scroll functionality to different sections
+                });
+            });
+            
+            // Back to top functionality
+            const backToTop = document.querySelector('.back-to-top');
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
         });
