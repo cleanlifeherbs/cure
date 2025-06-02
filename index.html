@@ -375,6 +375,68 @@
         .read-more-btn i {
             margin-left: 8px;
         }
+        header {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.container.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Mobile menu icon */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background-color: #f8f8f8;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
         
         /* Products Section */
         .products {
@@ -1015,21 +1077,32 @@
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="reviews.html">Reviews About Clean Life</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
+<!-- Header -->
+<!-- Header -->
+<header>
+    <div class="container header-container">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo" /></a>
         </div>
-    </header>
+
+        <!-- Mobile Menu Icon -->
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <!-- Navigation -->
+        <nav id="nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="reviews.html">Reviews About Clean Life</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Social Sidebar -->
     <div class="social-sidebar">
@@ -1049,10 +1122,10 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="/placeholder.svg?height=100&width=80" alt="" class="leaf leaf1">
-        <img src="/placeholder.svg?height=100&width=80" alt="" class="leaf leaf2">
-        <img src="/placeholder.svg?height=100&width=80" alt="" class="leaf leaf3">
-        <img src="/placeholder.svg?height=100&width=80" alt="" class="leaf leaf4">
+        <img src="image/leaf1.png?height=100&width=80" alt="" class="leaf leaf1">
+        <img src="image/leaf2.png?height=100&width=80" alt="" class="leaf leaf2">
+        <img src="image/leaf3.png?height=100&width=80" alt="" class="leaf leaf3">
+        <img src="image/leaf4.png?height=100&width=80" alt="" class="leaf leaf4">
         <div class="hero-content">
             <h1>Welcome To Clean Life</h1>
             <h1 style="color: #8bc34a; margin-top: -20px;">Herbal Remedy For Any Type Of Disease In Your Body</h1>
@@ -1418,6 +1491,13 @@
                     backToTop.classList.remove('visible');
                 }
             });
+            
+            const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+    });
             
             // Navigation dots functionality
             const navDots = document.querySelectorAll('.nav-dot');
